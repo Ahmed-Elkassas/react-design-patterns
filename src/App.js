@@ -12,12 +12,10 @@ const RightComponent = () => {
 export default function App() {
   return (
     <div className="App">
-      <SplitScreen
-        left={LeftComponent}
-        right={RightComponent}
-        leftWeight={1}
-        rightWeight={3}
-      />
+      <SplitScreen leftWeight={1} rightWeight={3}>
+        <LeftComponent />
+        <RightComponent />
+      </SplitScreen>
     </div>
   );
 }

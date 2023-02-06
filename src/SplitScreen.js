@@ -8,20 +8,13 @@ const Part = styled.div`
   flex: ${(props) => props.weight};
 `;
 
-export const SplitScreen = ({
-  left: Left,
-  right: Right,
-  leftWeight,
-  rightWeight,
-}) => {
+export const SplitScreen = ({ children, leftWeight, rightWeight }) => {
+  const [left, right] = children;
+
   return (
     <Container>
-      <Part weight={leftWeight}>
-        <Left />
-      </Part>
-      <Part weight={rightWeight}>
-        <Right />
-      </Part>
+      <Part weight={leftWeight}>{left}</Part>
+      <Part weight={rightWeight}>{right}</Part>
     </Container>
   );
 };
